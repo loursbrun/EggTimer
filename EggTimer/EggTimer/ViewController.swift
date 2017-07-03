@@ -24,6 +24,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func resetMinuteurAction(_ sender: Any) {
     }
     
+    
+    func selectionnerCuisson(selection: Int) {
+        switch selection {
+        case 0:
+            print("option séléctionné :\(pickerInfo[selection])")
+        case 1:
+            print("option séléctionné :\(pickerInfo[selection])")
+        case 2:
+             print("option séléctionné :\(pickerInfo[selection])")
+        default:
+             print("aucune sélection faite !")
+        }
+    }
+    
+    
+    
+    
     //MARK - UIPickerViewDataSource
     
     // returns the number of 'columns' to display.
@@ -39,6 +56,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerInfo[row]
     }
+    
+    
+    //MARK - UIPickerViewDelegate
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectionnerCuisson(selection: row)
+    }
+    
+    
  
     
     
@@ -49,10 +74,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickerView.dataSource = self
         pickerView.delegate = self
         
-        for i in 0...8{
-            let row = "option \(i)"
-            pickerInfo.append(row)
-        }
+        pickerInfo = ["Oeufs durs", "Oeuf à la coque", "Oeuf Molet"]
         
         
     }
