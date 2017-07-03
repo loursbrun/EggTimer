@@ -84,7 +84,7 @@
                     <connections>
                         <outlet property="activerMinuteurBtn" destination="ZQF-4H-zHg" id="GmW-AW-dbK"/>
                         <outlet property="minuteurLabel" destination="hxb-P8-9zW" id="raE-NG-Sge"/>
-                        <outlet property="pickerViewSelectionCuisson" destination="8sQ-4s-QPl" id="Goy-5k-fA1"/>
+                        <outlet property="pickerView" destination="8sQ-4s-QPl" id="tpe-fm-Bdz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
