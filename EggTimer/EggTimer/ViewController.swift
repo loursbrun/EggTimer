@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var pickerInfo: [String] = []
+    var tempsCuisson: Int = 0
+    
     
     
     //outlest
@@ -28,18 +30,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func selectionnerCuisson(selection: Int) {
         switch selection {
         case 0:
-            print("option séléctionné :\(pickerInfo[selection])")
+            tempsCuisson = 600
+            minuteurLabel.text = minuteurString(temps: tempsCuisson)
         case 1:
-            print("option séléctionné :\(pickerInfo[selection])")
+            tempsCuisson = 180
+            minuteurLabel.text = minuteurString(temps: tempsCuisson)
         case 2:
-             print("option séléctionné :\(pickerInfo[selection])")
+            tempsCuisson = 360
+            minuteurLabel.text = minuteurString(temps: tempsCuisson)
+        case 3:
+            tempsCuisson = 180
+            minuteurLabel.text = minuteurString(temps: tempsCuisson)
+        case 4:
+            tempsCuisson = 240
+            minuteurLabel.text = minuteurString(temps: tempsCuisson)
+        case 4:
+            tempsCuisson = 300
+            minuteurLabel.text = minuteurString(temps: tempsCuisson)
         default:
              print("aucune sélection faite !")
+            minuteurLabel.text = minuteurString(temps: 0)
         }
     }
     
-    
-    
+    func minuteurString(temps: Int) -> String {
+        let heure = Int(temps) / 3600
+        let minutes = Int(temps) / 60 % 60
+        let seconde = Int(temps) % 60
+        
+        return String(format: "%02i:%02i:%02i", heure, minutes, seconde)
+    }
+     
     
     //MARK - UIPickerViewDataSource
     
@@ -74,7 +95,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickerView.dataSource = self
         pickerView.delegate = self
         
-        pickerInfo = ["Oeufs durs", "Oeuf à la coque", "Oeuf Molet"]
+        pickerInfo = ["Oeufs durs", "Oeuf à la coque", "Oeuf Mollet", "Oeuf cocotte", "Oeuf Poché", "Omelette baveuse"]
         
         
     }

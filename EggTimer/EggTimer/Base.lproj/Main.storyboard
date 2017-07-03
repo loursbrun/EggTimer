@@ -21,10 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-P8-9zW">
-                                <rect key="frame" x="87.5" y="203" width="200" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-P8-9zW">
+                                <rect key="frame" x="47" y="203" width="290" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="UsL-2T-rbk"/>
+                                    <constraint firstAttribute="width" constant="290" id="UsL-2T-rbk"/>
                                     <constraint firstAttribute="height" constant="60" id="aI6-qF-53K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -74,7 +74,7 @@
                         <constraints>
                             <constraint firstItem="nTX-E7-tzG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2R2-VA-bzj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8sQ-4s-QPl" secondAttribute="bottom" id="508-mQ-m3g"/>
-                            <constraint firstItem="hxb-P8-9zW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L7d-Rl-uHw"/>
+                            <constraint firstItem="hxb-P8-9zW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="4.5" id="L7d-Rl-uHw"/>
                             <constraint firstAttribute="trailing" secondItem="8sQ-4s-QPl" secondAttribute="trailing" id="MPy-vA-SL7"/>
                             <constraint firstItem="nTX-E7-tzG" firstAttribute="top" secondItem="hxb-P8-9zW" secondAttribute="bottom" constant="45" id="U1R-cy-Ufe"/>
                             <constraint firstItem="hxb-P8-9zW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="183" id="rda-Jw-Msh"/>
