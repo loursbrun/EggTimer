@@ -40,6 +40,9 @@
                                             <constraint firstAttribute="width" constant="100" id="KmW-Ee-eqp"/>
                                         </constraints>
                                         <state key="normal" title="Démarer"/>
+                                        <connections>
+                                            <action selector="activerMinuteurAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWg-W5-yiV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsS-Gj-z2S">
                                         <rect key="frame" x="135" y="0.0" width="100" height="60"/>
@@ -47,6 +50,9 @@
                                             <constraint firstAttribute="width" constant="100" id="RFD-1G-0Py"/>
                                         </constraints>
                                         <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetMinuteurAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZVO-fE-kJx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -57,15 +63,29 @@
                                     <constraint firstAttribute="trailing" secondItem="AsS-Gj-z2S" secondAttribute="trailing" id="ltp-yf-XhK"/>
                                 </constraints>
                             </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sQ-4s-QPl">
+                                <rect key="frame" x="0.0" y="437" width="375" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="ux9-LQ-g7Q"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nTX-E7-tzG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2R2-VA-bzj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8sQ-4s-QPl" secondAttribute="bottom" id="508-mQ-m3g"/>
                             <constraint firstItem="hxb-P8-9zW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L7d-Rl-uHw"/>
+                            <constraint firstAttribute="trailing" secondItem="8sQ-4s-QPl" secondAttribute="trailing" id="MPy-vA-SL7"/>
                             <constraint firstItem="nTX-E7-tzG" firstAttribute="top" secondItem="hxb-P8-9zW" secondAttribute="bottom" constant="45" id="U1R-cy-Ufe"/>
                             <constraint firstItem="hxb-P8-9zW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="183" id="rda-Jw-Msh"/>
+                            <constraint firstItem="8sQ-4s-QPl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xKm-JD-Rhh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activerMinuteurBtn" destination="ZQF-4H-zHg" id="GmW-AW-dbK"/>
+                        <outlet property="minuteurLabel" destination="hxb-P8-9zW" id="raE-NG-Sge"/>
+                        <outlet property="pickerViewSelectionCuisson" destination="8sQ-4s-QPl" id="Goy-5k-fA1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

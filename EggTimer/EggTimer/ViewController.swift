@@ -10,6 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //outlest
+    @IBOutlet weak var minuteurLabel: UILabel!
+    @IBOutlet weak var activerMinuteurBtn: UIButton!
+    @IBOutlet weak var pickerViewSelectionCuisson: UIPickerView!
+    
+    //actions
+    @IBAction func activerMinuteurAction(_ sender: Any) {
+    }
+    @IBAction func resetMinuteurAction(_ sender: Any) {
+    }
+ 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
