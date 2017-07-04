@@ -27,6 +27,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         compteur()
     }
     @IBAction func resetMinuteurAction(_ sender: Any) {
+        resetCompter()
     }
     
     
@@ -54,6 +55,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
              print("aucune sélection faite !")
             minuteurLabel.text = minuteurString(temps: 0)
         }
+        activerMinuteurBtn.isEnabled = true
+        activerMinuteurBtn.alpha = 1
     }
     
     func minuteurString(temps: Int) -> String {
@@ -83,6 +86,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func icrementer() {
         tempsCuisson -= 1;
         minuteurLabel.text = minuteurString(temps: tempsCuisson)
+    }
+    
+    func resetCompter() {
+        timer.invalidate()
+        tempsCuisson = 0
+        minuteurLabel.text = "00:00:00"
+        activerMinuteurBtn.setTitle("Démarer", for: UIControlState.normal)
+        activerMinuteurBtn.setTitleColor(UIColor.blue, for: UIControlState.normal)
+        estActif = false
+        activerMinuteurBtn.isEnabled = false
+        activerMinuteurBtn.alpha = 0.3
+        pickerView.selectRow(0, inComponent: 0, animated: true)
     }
     
     //MARK - UIPickerViewDataSource
@@ -121,6 +136,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickerInfo = ["Oeufs durs", "Oeuf à la coque", "Oeuf Mollet", "Oeuf cocotte", "Oeuf Poché", "Omelette baveuse"]
         
         activerMinuteurBtn.setTitleColor(UIColor.blue, for: UIControlState.normal)
+        
+        activerMinuteurBtn.isEnabled = false
+        activerMinuteurBtn.alpha = 0.3
     }
 
   
