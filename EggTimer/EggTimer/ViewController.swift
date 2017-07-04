@@ -12,6 +12,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     var pickerInfo: [String] = []
     var tempsCuisson: Int = 0
+    var timer:Timer = Timer()
+    var estActif:Bool = false
     
     
     
@@ -22,6 +24,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //actions
     @IBAction func activerMinuteurAction(_ sender: Any) {
+        compteur()
     }
     @IBAction func resetMinuteurAction(_ sender: Any) {
     }
@@ -54,7 +57,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func minuteurString(temps: Int) -> String {
-        let heure = Int(temps) / 3600é
+        let heure = Int(temps) / 3600
         let minutes = Int(temps) / 60 % 60
         let seconde = Int(temps) % 60
         
@@ -63,7 +66,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     func compteur() {
+        if(!estActif){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.icrementer), userInfo: nil, repeats: true)
+            timer.fire()
+            activerMinuteurBtn.setTitle("Stop", for: UIControlState.normal)
+            activerMinuteurBtn.setTitleColor(UIColor.orange, for: UIControlState.normal)
+            estActif = true
+        } else {
+        timer.invalidate()
+            activerMinuteurBtn.setTitle("Démarer", for: UIControlState.normal)
+            activerMinuteurBtn.setTitleColor(UIColor.blue, for: UIControlState.normal)
+            estActif = false
+        }
     }
     
     func icrementer() {
@@ -106,7 +120,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         pickerInfo = ["Oeufs durs", "Oeuf à la coque", "Oeuf Mollet", "Oeuf cocotte", "Oeuf Poché", "Omelette baveuse"]
         
-        
+        activerMinuteurBtn.setTitleColor(UIColor.blue, for: UIControlState.normal)
     }
 
   
