@@ -54,13 +54,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func minuteurString(temps: Int) -> String {
-        let heure = Int(temps) / 3600
+        let heure = Int(temps) / 3600é
         let minutes = Int(temps) / 60 % 60
         let seconde = Int(temps) % 60
         
         return String(format: "%02i:%02i:%02i", heure, minutes, seconde)
     }
-     
+    
+    
+    func compteur() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.icrementer), userInfo: nil, repeats: true)
+    }
+    
+    func icrementer() {
+        tempsCuisson -= 1;
+        minuteurLabel.text = minuteurString(temps: tempsCuisson)
+    }
     
     //MARK - UIPickerViewDataSource
     
