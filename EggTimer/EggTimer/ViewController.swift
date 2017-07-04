@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var pickerInfo: [String] = []
     var tempsCuisson: Int = 0
     var timer:Timer = Timer()
+    var lecteur:AVAudioPlayer = AVAudioPlayer()
     var estActif:Bool = false
     
     
@@ -37,7 +39,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             tempsCuisson = 600
             minuteurLabel.text = minuteurString(temps: tempsCuisson)
         case 1:
-            tempsCuisson = 180
+            tempsCuisson = 10
             minuteurLabel.text = minuteurString(temps: tempsCuisson)
         case 2:
             tempsCuisson = 360
@@ -57,6 +59,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         activerMinuteurBtn.isEnabled = true
         activerMinuteurBtn.alpha = 1
+        minuteurLabel.textColor = UIColor.black
     }
     
     func minuteurString(temps: Int) -> String {
@@ -70,7 +73,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func compteur() {
         if(!estActif){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.icrementer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.incrementer), userInfo: nil, repeats: true)
             timer.fire()
             activerMinuteurBtn.setTitle("Stop", for: UIControlState.normal)
             activerMinuteurBtn.setTitleColor(UIColor.orange, for: UIControlState.normal)
@@ -83,7 +86,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    func icrementer() {
+    func incrementer() {
+        if( tempsCuisson == 0) {
+            timer.invalidate()
+            minuteurLabel.text = "00:00:00"
+            activerMinuteurBtn.setTitle("Démarer", for: UIControlState.normal)
+            activerMinuteurBtn.setTitleColor(UIColor.blue, for: UIControlState.normal)
+            
+            minuteurLabel.textColor = UIColor.green
+            
+            activerMinuteurBtn.isEnabled = false
+            activerMinuteurBtn.alpha = 0.3
+
+            lecteur.play()
+        } else {
+            
+        }
         tempsCuisson -= 1;
         minuteurLabel.text = minuteurString(temps: tempsCuisson)
     }
@@ -99,6 +117,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         activerMinuteurBtn.alpha = 0.3
         pickerView.selectRow(0, inComponent: 0, animated: true)
     }
+    
+    
+    //AVAudioPlayer
+    
+    func alarm() {
+        let fichier = Bundle.main.path(forResource: "alarm", ofType: "mp3")
+        do {
+            try lecteur = AVAudioPlayer(contentsOf: URL(string: fichier!)!)
+        } catch {
+            print("erreur lecture fichier MP3")
+        }
+    }
+    
     
     //MARK - UIPickerViewDataSource
     
@@ -139,6 +170,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         activerMinuteurBtn.isEnabled = false
         activerMinuteurBtn.alpha = 0.3
+        alarm()
     }
 
   

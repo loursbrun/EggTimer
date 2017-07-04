@@ -12,6 +12,7 @@
 		22758F4B1F07A24A0040FF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22758F491F07A24A0040FF56 /* Main.storyboard */; };
 		22758F4D1F07A24A0040FF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22758F4C1F07A24A0040FF56 /* Assets.xcassets */; };
 		22758F501F07A24A0040FF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22758F4E1F07A24A0040FF56 /* LaunchScreen.storyboard */; };
+		228AD2EC1F0C2F1C00F1ED54 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 228AD2EB1F0C2F1C00F1ED54 /* alarm.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		22758F4C1F07A24A0040FF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22758F4F1F07A24A0040FF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22758F511F07A24A0040FF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228AD2EB1F0C2F1C00F1ED54 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				22758F451F07A24A0040FF56 /* AppDelegate.swift */,
 				22758F471F07A24A0040FF56 /* ViewController.swift */,
+				228AD2EB1F0C2F1C00F1ED54 /* alarm.mp3 */,
 				22758F491F07A24A0040FF56 /* Main.storyboard */,
 				22758F4C1F07A24A0040FF56 /* Assets.xcassets */,
 				22758F4E1F07A24A0040FF56 /* LaunchScreen.storyboard */,
@@ -124,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228AD2EC1F0C2F1C00F1ED54 /* alarm.mp3 in Resources */,
 				22758F501F07A24A0040FF56 /* LaunchScreen.storyboard in Resources */,
 				22758F4D1F07A24A0040FF56 /* Assets.xcassets in Resources */,
 				22758F4B1F07A24A0040FF56 /* Main.storyboard in Resources */,
@@ -304,6 +308,7 @@
 				22758F561F07A24A0040FF56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
